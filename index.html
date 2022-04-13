@@ -36,12 +36,27 @@
                         datasets: [
                             { label: "Hemisferio Norte", data: norte.slice(1), borderColor: "#0208FA", borderWidth: 2, pointRadius: 2 },
                             { label: "Hemisferio Sur", data: sur.slice(1), borderColor: "#40DD65", borderWidth: 2, pointRadius: 2 }
-                        ]
-                    }
-                });
-            }
-            visualizacion().catch((error) => console.error(error));
-        </script>
-        <script src="script.js"></script>
-    </body>
-</html>
+                          ]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    ticks: {
+                                        callback: function (numero) {
+                                            return numero.toLocaleString("es-CL");
+                                        }
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: { display: false },
+                                title: { display: true, text: "AUMENTO EN LAS TEMPERATURAS EN EL TIEMPO" },
+                            }
+                        }
+                    })
+                }
+                visualizacion().catch((error) => console.error(error));
+            </script>
+            <script src="script.js"></script>
+        </body>
+    </html>
