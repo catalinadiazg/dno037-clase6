@@ -47,11 +47,16 @@
                     data: {
                         labels: nombres,
                         datasets: [{label: "Earthquakes", data: numeros, backgroundColor: colores}]
-                    }
-                });
-            }
+                      },
+                      options: {
+                        plugins: {
+                            title: { display: true, text: "NIVELES DE DIGIMON" },
+                          }
+                      }
+                  })
+              }
             todo().catch((error) => console.error(error));
         </script>
         <script src="script.js"></script>
     </body>
-</html>
+  </html>
