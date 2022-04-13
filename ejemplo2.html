@@ -44,9 +44,14 @@
                     data: {
                         labels: nombres,
                         datasets: [{label: "Earthquakes", data: numeros, backgroundColor: colores}]
-                    }
-                });
-            }
+                      },
+                      options: {
+                        plugins: {
+                            title: { display: true, text: "TERREMOTOS EN EL MUNDO" },
+                          }
+                      }
+                  })
+              }
             todo().catch((error) => console.error(error));
         </script>
         <script src="script.js"></script>
