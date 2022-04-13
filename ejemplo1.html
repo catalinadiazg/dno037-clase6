@@ -20,16 +20,21 @@
                     estaturas.push(s.height);
                 });
                 new Chart(document.getElementById("miGrafico").getContext('2d'), {
-                    type: "bar",
-                    data: {
+                   type: "bar",
+                   data: {
+                       labels: nombres,
+                       datasets: [{label: "StarWars", data: estaturas, backgroundColor: "#08DC8B"}]
+                   },
 
-                        labels: nombres,
-                        datasets: [{label: "StarWars", data: estaturas, backgroundColor: "#778"}]
-                    }
-                });
-            }
-            todo().catch((error) => console.error(error));
-        </script>
-        <script src="script.js"></script>
-    </body>
+                   options: {
+                     plugins: {
+                         title: { display: true, text: "ESTATURA DE PERSONAJES DE STAR WARS" },
+                       }
+                   }
+               })
+           }
+           todo().catch((error) => console.error(error));
+       </script>
+       <script src="script.js"></script>
+   </body>
 </html>
